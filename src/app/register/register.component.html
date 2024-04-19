@@ -1,0 +1,66 @@
+<div
+  style="min-height: 100vh"
+  class="d-flex justify-content-center align-items-center w-100"
+>
+  <div class=".w-80 border-rounded p-5 card shadow">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <img
+          src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-232.jpg?size=626&ext=jpg&ga=GA1.1.1430751802.1698048199&semt=ais"
+          alt="login"
+        width="100%"/>
+      </div>
+
+      <div class="col-lg-6">
+
+        <!-- <pre>{{email}}  {{password}}</pre> -->
+        <h2>Login Form</h2>
+       
+        <form >
+
+            <div class="mb-3">
+                <input  type="text" class="form-control" placeholder="Username" username required
+                name="name" />
+              </div>
+
+          <!-- invalid email -->
+
+          
+          <div class="mb-3">
+            <input  type="email" class="form-control" placeholder="Email Address" email required
+            name="email" />
+          </div>
+
+
+          <!-- invalid password -->
+
+         
+          <div class="mb-3">
+            <input 
+              type="password"
+              class="form-control"
+              placeholder="Password" pattern="[a-zA-Z0-9]*" minlength="3" required
+              name="password" 
+            />
+          </div>
+
+          <div class="mb-3">
+            <input
+              
+              type="submit"
+              class="btn btn-success "
+              value="Register" 
+            />
+          </div>
+          <div>
+            
+          </div>
+          <p>already Have an account <span ><a href=""class="text-primary" routerLink="/login">Login</a></span></p>
+        </form>
+
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
