@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserCartComponent } from './user-cart/user-cart.component';
 import { UserWishlistComponent } from './user-wishlist/user-wishlist.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
