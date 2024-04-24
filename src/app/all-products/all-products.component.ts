@@ -40,6 +40,15 @@ export class AllProductsComponent implements OnInit{
 
   addToWishlist(product:any){
     if(sessionStorage.getItem("token")){
+      this.api.addWishListAPI(product).subscribe({
+        next:((res:any)=>{
+          this.toaster.success( "Added To Wishlist ","Success");
+        }),
+        error:(reason:any)=>{
+          console.log(reason);
+      }
+        
+      })
      
     }else{
       this.toaster.warning( "Please Login First","Login Required");
