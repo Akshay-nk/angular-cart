@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-all-products',
@@ -9,7 +10,7 @@ import { ApiService } from '../service/api.service';
 export class AllProductsComponent implements OnInit{
 
   allProducts:any=[];
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService,private toaster:ToastrService){}
 
   ngOnInit(): void {
     this.getAllProduct()
@@ -27,4 +28,21 @@ export class AllProductsComponent implements OnInit{
       
     })
   }
+
+
+  addToCart(product:any){
+     if(sessionStorage.getItem("token")){
+
+     }else{
+          this.toaster.warning( "Please Login First","Login Required");
+     }
+  }
+
+  addToWishlist(product:any){
+    if(sessionStorage.getItem("token")){
+     
+    }else{
+      this.toaster.warning( "Please Login First","Login Required");
+    }
+ }
 }

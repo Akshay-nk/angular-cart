@@ -21,4 +21,8 @@ export class ApiService {
   loginAPI(user:any){
     return this.http.post(`${this.SERVER_URL}/login`,user)
   }
+
+  viewProductAPI(id:any){
+    return this.http.get(`${this.SERVER_URL}/view/product/${id}`)
+  }
 }
