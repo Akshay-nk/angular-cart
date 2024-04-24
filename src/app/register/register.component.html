@@ -16,11 +16,12 @@
         <!-- <pre>{{email}}  {{password}}</pre> -->
         <h2>Login Form</h2>
        
-        <form >
+        <form [formGroup]="registerForm">
 
             <div class="mb-3">
                 <input  type="text" class="form-control" placeholder="Username" username required
-                name="name" />
+                name="username" formControlName="username" />
+                <div *ngIf="registerForm.get('username')?.errors &&registerForm.get('username')?.touched" class="text-danger">Invalid username</div>
               </div>
 
           <!-- invalid email -->
@@ -28,7 +29,9 @@
           
           <div class="mb-3">
             <input  type="email" class="form-control" placeholder="Email Address" email required
-            name="email" />
+            name="email" formControlName="email" />
+            <div *ngIf="registerForm.get('email')?.errors &&registerForm.get('email')?.touched" class="text-danger">Invalid username</div>
+
           </div>
 
 
@@ -40,13 +43,16 @@
               type="password"
               class="form-control"
               placeholder="Password" pattern="[a-zA-Z0-9]*" minlength="3" required
-              name="password" 
+              name="password"  formControlName="password"
             />
+            <div *ngIf="registerForm.get('password')?.errors &&registerForm.get('password')?.touched" class="text-danger">Invalid username</div>
+
           </div>
 
           <div class="mb-3">
             <input
-              
+
+              (click)="register()"  
               type="submit"
               class="btn btn-success "
               value="Register" 
@@ -64,3 +70,7 @@
     </div>
   </div>
 </div>
+
+{{registerForm.value.username}}
+{{registerForm.value.email}}
+{{registerForm.value.password}}

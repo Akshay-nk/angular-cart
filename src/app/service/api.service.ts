@@ -11,6 +11,14 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
   getAllProductsAPI(){
-    this.http.get(`${this.SERVER_URL}/allproducts`)
+    return this.http.get(`${this.SERVER_URL}/allproducts`)
+  }
+
+  registerAPI(user:any){
+    return this.http.post(`${this.SERVER_URL}/register`,user)
+  }
+
+  loginAPI(user:any){
+    return this.http.post(`${this.SERVER_URL}/login`,user)
   }
 }

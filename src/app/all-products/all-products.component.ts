@@ -8,7 +8,7 @@ import { ApiService } from '../service/api.service';
 })
 export class AllProductsComponent implements OnInit{
 
-  allProducts:any=[]
+  allProducts:any=[];
   constructor(private api:ApiService){}
 
   ngOnInit(): void {

@@ -16,14 +16,16 @@
         <!-- <pre>{{email}}  {{password}}</pre> -->
         <h2>Login Form</h2>
        
-        <form >
+        <form [formGroup]="loginForm">
 
           <!-- invalid email -->
 
           
           <div class="mb-3">
             <input  type="email" class="form-control" placeholder="Email Address" email required
-            name="email" />
+            name="email" formControlName="email" />
+            <div *ngIf="loginForm.get('email')?.errors &&loginForm.get('email')?.touched" class="text-danger">Invalid email</div>
+
           </div>
 
 
@@ -35,13 +37,15 @@
               type="password"
               class="form-control"
               placeholder="Password" pattern="[a-zA-Z0-9]*" minlength="3" required
-              name="password" 
+              name="password"  formControlName="password"
             />
+            <div *ngIf="loginForm.get('password')?.errors &&loginForm.get('password')?.touched" class="text-danger">Invalid password</div>
+
           </div>
 
           <div class="mb-3">
             <input
-              
+              (click)="login()"
               type="submit"
               class="btn btn-success "
               value="Login" 
